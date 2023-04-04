@@ -2,6 +2,9 @@
 
 [![Test action](https://github.com/JosiahSiegel/workflow-housekeeper/actions/workflows/test_action.yml/badge.svg)](https://github.com/JosiahSiegel/workflow-housekeeper/actions/workflows/test_action.yml)
 
+### Dependencies:
+
+>Change in repo: `Settings -> Actions -> General -> Workflow Permissions to allow read and write`
 
 ## Inputs
 ```yml
