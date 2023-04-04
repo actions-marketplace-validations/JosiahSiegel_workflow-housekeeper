@@ -18,3 +18,8 @@ jobs:
       - name: Use local action
         uses: ./
         id: local-action
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Get outputs
+        run: |
+          echo "output: ${{ steps.local-action.outputs.housekeeping_output }}"
