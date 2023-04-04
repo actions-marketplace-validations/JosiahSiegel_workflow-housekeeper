@@ -17,6 +17,7 @@ if [[ -z $ignore_branch_workflows ]]; then
 fi
 
 last_week=$(date -d "$date -1 weeks" +%s)
+runs="repos/$repo/actions/runs"
 files=$(ls -1 .github/workflows/ | sed  's/^/and .path != \".github\/workflows\//;s/$/\"/')
 query=".workflow_runs[] \
 | select( \
@@ -26,4 +27,4 @@ query=".workflow_runs[] \
 | select (.run_started_at | . == null or fromdateiso8601 < $last_week)
 | (.id)"
 gh api --paginate $runs --jq "$query" \
-| xargs -n1 -I % gh api $runs/% 
+| xargs -n1 -I % gh api $runs/%

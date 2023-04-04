@@ -8,10 +8,6 @@
   github-token:
     description: 'Token used to login to GitHub'
     required: true
-  repo:
-    description: 'Repo to scan run logs for exceptions'
-    required: false
-    default: ${{ github.repository }}
   ignore-branch-workflows:
     description: 'Ignore runs from workflows currently in ./github/workflow'
     required: false
