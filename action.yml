@@ -1,5 +1,5 @@
 # action.yml
-name: 'workflow-housekeeper'
+name: 'Workflow Housekeeper'
 description: 'Retain a time period or quantity of workflow runs.'
 branding:
   icon: 'trash-2'
