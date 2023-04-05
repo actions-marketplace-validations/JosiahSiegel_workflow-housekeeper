@@ -18,12 +18,13 @@ jobs:
       - name: Use local action
         uses: ./
         id: local-action
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          ignore-branch-workflows: true
           retention-time: '0 days'
           retain-run-count: 0
           dry-run: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Get outputs
         run: |
           echo "output: ${{ steps.local-action.outputs.housekeeping_output }}"

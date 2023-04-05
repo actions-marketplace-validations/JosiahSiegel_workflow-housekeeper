@@ -8,13 +8,18 @@
 
 ## Inputs
 ```yml
-  github-token:
-    description: 'Token used to login to GitHub'
-    required: true
   ignore-branch-workflows:
     description: 'Ignore runs from workflows currently in ./github/workflow'
     required: false
-    default: 'false'
+  retention-time:
+    description: 'Period of time to maintain history. E.g. "2 weeks", "3 days", etc.'
+    required: false
+  retain-run-count:
+    description: 'Number of latest runs to keep'
+    required: false
+  dry-run:
+    description: 'Only list runs pending deletion'
+    required: false
 ```
 
 ## Usage
@@ -23,6 +28,8 @@
         uses: actions/checkout@v3
       - name: Run workflow housekeeper
         uses: josiahsiegel/workflow-housekeeper@<CURRENT_VERSION>
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 or
 ```yml
@@ -31,7 +38,12 @@ or
       - name: Run workflow housekeeper
         uses: josiahsiegel/workflow-housekeeper@<CURRENT_VERSION>
         id: scan
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           github-token: ${{ secrets.MY_TOKEN }}
           ignore-branch-workflows: true
+          retention-time: '1 days'
+          retain-run-count: 1
+          dry-run: false
 ```
