@@ -41,7 +41,6 @@ or
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          github-token: ${{ secrets.MY_TOKEN }}
           ignore-branch-workflows: true
           retention-time: '1 days'
           retain-run-count: 1
