@@ -1,5 +1,7 @@
 # Workflow Housekeeper
 
+Retain a time period or quantity of workflow runs.
+
 [![Test action](https://github.com/JosiahSiegel/workflow-housekeeper/actions/workflows/test_action.yml/badge.svg)](https://github.com/JosiahSiegel/workflow-housekeeper/actions/workflows/test_action.yml)
 
 ### Dependencies:
